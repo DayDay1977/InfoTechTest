@@ -1,8 +1,8 @@
 public class CloserToZero {
-    public static void closerToZero(){
+
+    public static void closerToZero(int[] nums){
         int i;
         int result = 0;
-        int[] nums = {1,5,9,8,6,7,3};
 
         for(i=0;i<nums.length-1;i++){
             if(nums[i] < nums[i+1]){
@@ -13,6 +13,9 @@ public class CloserToZero {
         }
         if(result>nums[0]){
             result = nums[0];
+        }
+        if(result<0){
+            result = result*-1;
         }
         System.out.println(result);
     }

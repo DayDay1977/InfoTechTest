@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class NextDate {
 
-    public void nextDate(int day, int month, int year){
+    public static void nextDate(int day, int month, int year){
         Map<Integer,Integer> comparator = new HashMap<>();
 
         comparator.put(1,31);
@@ -24,9 +24,13 @@ public class NextDate {
         }
         else if (day == comparator.get(month)){
             day = 1;
+            if(month == 12){
+                month = 1;
+            }
             month = month + 1;
         }
         else if (month == 12 && day == comparator.get(month)){
+            month = 1;
             year = year + 1;
         }
 

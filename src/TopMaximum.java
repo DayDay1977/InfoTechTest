@@ -1,15 +1,15 @@
 public class TopMaximum {
 
-    public void top2Maximum(){
+    public static void top2Maximum(int[] nums){
         int max1 = Integer.MIN_VALUE;
         int max2 =  Integer.MAX_VALUE;
-        int[] nums = {1,2,3,4,5,6};
 
         for( int num : nums){
-            if ( num > max1){
-                max1 = num;
-            }else if(max2 > max1){
+            if ( max1 < num){
                 max2 = max1;
+                max1 = num;
+            }else if(max2 < num){
+                max2 = num;
             }
         }
 
